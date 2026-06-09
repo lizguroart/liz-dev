@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { Project } from "@/app/data/projects";
 
 interface ProjectCardProps {
   project: Project;
