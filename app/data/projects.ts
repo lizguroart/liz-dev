@@ -48,12 +48,12 @@ export const projects: Project[] = [
     description:
       "Desarrollo de una experiencia de personalización para productos premium permitiendo visualizar grabados y configuraciones antes de finalizar la compra. La solución permitía seleccionar texto, tipografía, posición y otras opciones de personalización con renderizado dinámico sobre el producto.",
 
-    image: "/project/product-customizer/cover.png",
+    image: "/project/product-customizer/cover-.png",
 
     gallery: [
-      "/projects/product-customizer/1.webp",
-      "/projects/product-customizer/2.webp",
-      "/projects/product-customizer/3.webp",
+      "/project/product-customizer/1-.png",
+      "/project/product-customizer/2.png",
+      "/project/product-customizer/3.png",
     ],
 
     technologies: [
@@ -105,12 +105,12 @@ export const projects: Project[] = [
     description:
       "Sitio web desarrollado para presentar servicios de desarrollo web, soporte tecnológico e infraestructura digital. Diseñado con enfoque en conversión, experiencia de usuario y posicionamiento profesional.",
 
-    image: "/project/3f/cover.png",
+    image: "/project/3f/cover1.png",
 
     gallery: [
-      "/projects/3f/1.webp",
-      "/projects/3f/2.webp",
-      "/projects/3f/3.webp",
+      "/project/3f/1.png",
+      "/project/3f/2.png",
+      "/project/3f/3.png",
     ],
 
     technologies: [
@@ -161,12 +161,12 @@ export const projects: Project[] = [
     description:
       "Plataforma desarrollada para facilitar la gestión de rifas, permitiendo controlar números disponibles, participantes y seguimiento del proceso de forma intuitiva.",
 
-    image: "/project/rifa/cover.png",
+    image: "/project/rifa/cover-.png",
 
     gallery: [
-      "/projects/rifa/1.webp",
-      "/projects/rifa/2.webp",
-      "/projects/rifa/3.webp",
+      "/project/rifa/1.png",
+      "/project/rifa/2.png",
+      "/project/rifa/3.png",
     ],
 
     technologies: [
@@ -217,9 +217,7 @@ export const projects: Project[] = [
     image: "/projects/portfolio/cover.webp",
 
     gallery: [
-      "/projects/portfolio/1.webp",
-      "/projects/portfolio/2.webp",
-      "/projects/portfolio/3.webp",
+     
     ],
 
     technologies: [
@@ -271,8 +269,7 @@ export const projects: Project[] = [
     image: "/projects/novena/cover.webp",
 
     gallery: [
-      "/projects/novena/1.webp",
-      "/projects/novena/2.webp",
+
     ],
 
     technologies: [

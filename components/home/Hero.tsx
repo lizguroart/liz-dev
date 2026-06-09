@@ -76,7 +76,7 @@ export default function Hero() {
             {/* Buttons */}
 
             <div className="mt-10 flex gap-4">
-            <Button variant="secondary" href="#services" className="inline-flex w-full lg:w-fit " showArrow>
+            <Button variant="secondary" href="#projects" className="inline-flex w-full lg:w-fit " showArrow>
               Ver proyectos
             </Button>
 

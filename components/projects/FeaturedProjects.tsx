@@ -29,27 +29,76 @@ export default function FeaturedProjects() {
         >
           {/* Header */}
 
-          <div className="mb-8 flex items-center justify-between">
-            <h2
-              className="
-                text-xl
-                font-semibold
-                text-white
-              "
-            >
-              Proyectos destacados 🪻
-            </h2>
+          <div
+            className="
+              mb-10
+              flex
+              flex-col
+              gap-4
+              lg:flex-row
+              lg:items-end
+              lg:justify-between
+            "
+          >
+            <div>
+              <span
+                className="
+                  text-sm
+                  uppercase
+                  tracking-[0.2em]
+                  text-pink-300
+                "
+              >
+                Portfolio
+              </span>
 
-            <button
+              <h2
+                className="
+                  mt-2
+                  text-3xl
+                  font-bold
+                  text-white
+                "
+              >
+                Proyectos destacados
+              </h2>
+
+              <p
+                className="
+                  mt-3
+                  max-w-2xl
+                  text-slate-400
+                "
+              >
+                Experiencias profesionales,
+                productos digitales y proyectos
+                personales desarrollados con foco
+                en rendimiento, experiencia de usuario
+                y escalabilidad.
+              </p>
+            </div>
+
+            <Link
+              href="/projects"
               className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-xl
+                border
+                border-pink-500/20
+                bg-pink-500/10
+                px-5
+                py-3
                 text-sm
                 text-pink-300
                 transition
-                hover:text-pink-200
+                hover:bg-pink-500/20
               "
             >
-              Ver todos los proyectos →
-            </button>
+              Ver todos los proyectos
+              <ArrowUpRight size={16} />
+            </Link>
           </div>
 
           {/* Grid */}
@@ -74,13 +123,16 @@ export default function FeaturedProjects() {
                   bg-[#141B31]
                   transition-all
                   duration-300
-                  hover:-translate-y-1
+                  hover:-translate-y-2
+                  hover:shadow-[0_20px_40px_rgba(236,72,153,0.12)]
                   hover:border-pink-400/30
                 "
               >
                 {/* Imagen */}
 
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative
+                  aspect-video
+                  overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -92,6 +144,44 @@ export default function FeaturedProjects() {
                       group-hover:scale-105
                     "
                   />
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      bg-gradient-to-t
+                      from-[#141B31]
+                      via-transparent
+                      to-transparent
+                    "
+                  />
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      right-4
+                    "
+                  >
+                    <span
+                      className={`
+                        rounded-full
+                        px-3
+                        py-1
+                        text-[11px]
+                        font-medium
+                        backdrop-blur-md
+
+                        ${
+                          project.status === "Live"
+                            ? "bg-emerald-500/20 text-emerald-300"
+                            : project.status === "En desarrollo"
+                            ? "bg-amber-500/20 text-amber-300"
+                            : "bg-slate-500/20 text-slate-300"
+                        }
+                      `}
+                    >
+                      {project.status}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Contenido */}
@@ -122,7 +212,8 @@ export default function FeaturedProjects() {
                   <h3
                     className="
                       mt-3
-                      text-base
+                      text-lg
+                      leading-snug
                       font-semibold
                       text-white
                     "
@@ -146,7 +237,7 @@ export default function FeaturedProjects() {
                   {/* Tecnologias */}
 
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
                         className="
@@ -167,33 +258,7 @@ export default function FeaturedProjects() {
 
                   {/* Footer */}
 
-                  <div className="mt-5 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div
-                        className={`
-                          h-2
-                          w-2
-                          rounded-full
-                          ${
-                            project.status === "Live"
-                              ? "bg-emerald-400"
-                              : project.status === "En desarrollo"
-                              ? "bg-amber-400"
-                              : "bg-slate-400"
-                          }
-                        `}
-                      />
-
-                      <span
-                        className="
-                          text-xs
-                          text-slate-400
-                        "
-                      >
-                        {project.status}
-                      </span>
-                    </div>
-
+                  <div className="mt-5 flex justify-end">
                     <Link
                       href={`/projects/${project.id}`}
                       className="

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { projects } from "@/app/data/projects";
 import ProjectGallery from "@/components/projects/ProjectGallery";
+import { technologyMap } from "@/app/data/tecnologyIcons";
 
 interface PageProps {
   params: Promise<{
@@ -64,6 +65,80 @@ export default async function ProjectPage({
       }
       title={project.title}
     />
+    {(project.challenges?.length || project.results?.length) && (
+  <section
+    className="
+      mt-12
+      grid
+      gap-6
+      lg:grid-cols-2
+    "
+  >
+    <div
+      className="
+        rounded-3xl
+        border
+        border-white/10
+        bg-white/[0.02]
+        p-8
+      "
+    >
+      <h2
+        className="
+          mb-6
+          text-xl
+          font-semibold
+          text-white
+        "
+      >
+        Retos Técnicos
+      </h2>
+
+      <ul className="space-y-4">
+        {project.challenges?.map((item) => (
+          <li
+            key={item}
+            className="text-slate-300 text-sm"
+          >
+            ✓ {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div
+      className="
+        rounded-3xl
+        border
+        border-white/10
+        bg-white/[0.02]
+        p-8
+      "
+    >
+      <h2
+        className="
+          mb-6
+          text-xl
+          font-semibold
+          text-white
+        "
+      >
+        Resultados
+      </h2>
+
+      <ul className="space-y-4">
+        {project.results?.map((item) => (
+          <li
+            key={item}
+            className="text-slate-300 text-sm"
+          >
+            ✓ {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
   </div>
 
   {/* INFORMACIÓN */}
@@ -91,10 +166,16 @@ export default async function ProjectPage({
     <h1
       className="
         mt-6
-        text-5xl
+        text-4xl
+        lg:text-4xl
         font-bold
         leading-tight
-        text-white
+        bg-gradient-to-r
+        from-white
+        via-pink-300
+        to-violet-400
+        bg-clip-text
+        text-transparent
       "
     >
       {project.title}
@@ -103,7 +184,7 @@ export default async function ProjectPage({
     <p
       className="
         mt-6
-        text-lg
+        text-medium
         leading-relaxed
         text-slate-400
       "
@@ -113,7 +194,7 @@ export default async function ProjectPage({
 
     <div
       className="
-        mt-8
+        mt-4
         flex
         items-center
         gap-4
@@ -144,7 +225,7 @@ export default async function ProjectPage({
 
     <h2
       className="
-        mt-8
+        mt-4
         mb-4
         text-xl
         font-semibold
@@ -155,22 +236,50 @@ export default async function ProjectPage({
     </h2>
 
     <div className="flex flex-wrap gap-3">
-      {project.technologies.map((tech) => (
+  {project.technologies.map((tech) => {
+    const technology = technologyMap[tech];
+
+    const Icon = technology?.icon;
+
+    return (
+      <div
+        key={tech}
+        className="
+          flex
+          items-center
+          gap-2
+          rounded-xl
+          border
+          border-white/10
+          bg-white/[0.03]
+          px-4
+          py-2
+          transition-all
+          duration-300
+          hover:border-pink-500/20
+        "
+      >
+        {Icon && (
+          <Icon
+            size={18}
+            style={{
+              color: technology.color,
+            }}
+          />
+        )}
+
         <span
-          key={tech}
           className="
-            rounded-xl
-            bg-violet-500/10
-            px-4
-            py-2
             text-sm
-            text-violet-200
+            text-slate-200
           "
         >
           {tech}
         </span>
-      ))}
-    </div>
+      </div>
+    );
+  })}
+</div>
     
     <h2
       className="
@@ -193,6 +302,7 @@ export default async function ProjectPage({
             items-start
             gap-3
             text-slate-300
+            text-sm
           "
         >
           <span className="text-pink-400">
@@ -205,81 +315,6 @@ export default async function ProjectPage({
     </ul>
   </div>
 </section>
-
-        {(project.challenges?.length || project.results?.length) && (
-  <section
-    className="
-      mt-12
-      grid
-      gap-6
-      lg:grid-cols-2
-    "
-  >
-    <div
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/[0.02]
-        p-8
-      "
-    >
-      <h2
-        className="
-          mb-6
-          text-2xl
-          font-semibold
-          text-white
-        "
-      >
-        Retos Técnicos
-      </h2>
-
-      <ul className="space-y-4">
-        {project.challenges?.map((item) => (
-          <li
-            key={item}
-            className="text-slate-300"
-          >
-            ✓ {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-
-    <div
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/[0.02]
-        p-8
-      "
-    >
-      <h2
-        className="
-          mb-6
-          text-2xl
-          font-semibold
-          text-white
-        "
-      >
-        Resultados
-      </h2>
-
-      <ul className="space-y-4">
-        {project.results?.map((item) => (
-          <li
-            key={item}
-            className="text-slate-300"
-          >
-            ✓ {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-)}
 
         {/* CTA SEGÚN ESTADO */}
 
