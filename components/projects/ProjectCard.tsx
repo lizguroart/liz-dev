@@ -1,15 +1,14 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { Project } from "@/app/data/projects";
+import Link from "next/link";
 
 interface ProjectCardProps {
   project: Project;
-  onOpen: (project: Project) => void;
 }
+
 
 export default function ProjectCard({
   project,
-  onOpen,
 }: ProjectCardProps) {
   return (
     <article
@@ -86,8 +85,8 @@ export default function ProjectCard({
         </div>
 
         <div className="mt-5 flex justify-end">
-          <button
-            onClick={() => onOpen(project)}
+          <Link
+            href={`/projects/${project.id}`}
             className="
               flex
               h-10
@@ -102,7 +101,7 @@ export default function ProjectCard({
             "
           >
             <ArrowUpRight size={18} />
-          </button>
+          </Link>
         </div>
       </div>
     </article>

@@ -214,7 +214,7 @@ export const projects: Project[] = [
     description:
       "Sitio web creado para mostrar experiencia profesional, habilidades técnicas y proyectos destacados mediante una experiencia visual moderna e interactiva.",
 
-    image: "/projects/portfolio/cover.webp",
+    image: "/project/portafolio/cover.png",
 
     gallery: [
      
@@ -266,7 +266,7 @@ export const projects: Project[] = [
     description:
       "Proyecto desarrollado para modernizar la experiencia tradicional de la Novena de Aguinaldos mediante una interfaz amigable y accesible desde cualquier dispositivo.",
 
-    image: "/projects/novena/cover.webp",
+    image: "/project/novena/cover.png",
 
     gallery: [
 
