@@ -4,7 +4,7 @@ import { technologies } from "@/app/data/technologies";
 
 export default function TechStack() {
   return (
-    <section className="mt-2">
+    <section className="mt-4">
       <div
         className="
           rounded-2xl

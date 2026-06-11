@@ -2,7 +2,7 @@ import { technologies } from "@/app/data/technologies";
 
 export default function HeroTechStack() {
   return (
-    <div className="mt-12">
+    <div className="mt-2 lg:mt-12">
       <p
         className="
           mb-4
@@ -15,7 +15,12 @@ export default function HeroTechStack() {
         Tecnologías favoritas
       </p>
 
-     <div className="flex flex-wrap gap-3">
+     <div className=" grid
+    grid-cols-2
+    gap-3
+    justify-items-center
+    lg:flex
+    lg:flex-wrap">
       {technologies.map((tech) => {
         const Icon = tech.icon;
 

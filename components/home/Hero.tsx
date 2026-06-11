@@ -3,6 +3,7 @@ import Badge from "@/components/ui/Badge";
 import Button from "../ui/Button";
 import Image from "next/image";
 import HeroTechStack from "../layout/HeroTechStacks";
+import HeroMobile from "./HeroMobile";
 
 export default function Hero() {
   return (
@@ -16,7 +17,8 @@ export default function Hero() {
         lg:pb-10
       "
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <HeroMobile />
+      <div className="hidden lg:block mx-auto max-w-7xl px-6">
         <div
           className="
             grid
@@ -166,5 +168,6 @@ export default function Hero() {
         </div>
       </div>
     </section>
+    
   );
 }

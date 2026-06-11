@@ -4,6 +4,7 @@ import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import TechStack from "@/components/home/TechStack";
 import FeaturedProjects from "@/components/projects/FeaturedProjects";
+import Footer from "@/components/layout/Footer";
 
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <About />
       <TechStack />
       <FeaturedProjects />
+      <Footer />
       
     </main>
   );
